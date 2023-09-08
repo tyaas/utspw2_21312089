@@ -55,8 +55,8 @@ class PeranController extends Controller
             'nama.required'=>'tahun Wajib Di isi',
         ]);
 
-        $peran-> film_id = $request->film;
-        $peran-> cast_id = $request->cast;
+        $peran-> film_id = $request->film_id;
+        $peran-> cast_id = $request->cast_id;
         $peran-> nama = $request->nama;
        
         

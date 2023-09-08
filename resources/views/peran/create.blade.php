@@ -10,32 +10,29 @@
 <form method="POST" action="{{url('peran')}}">
     @csrf
     @method('post')
-<div class="form-group">
-    <label >Film</label>
-    <div class="col-sm-10">
-        <input type="text" class="form-control" value="{{Session::get ('film')}}" name='film'>
+
+    <div class="form-group">
+        <label for="">cast</label>
+        <select class="form-control" name="cast">
+            <option value="">Pilih cast</option>
+            @forelse ($cast as $item)
+            <option value="{{$item["id"]}}">{{$item['nama']}}</option>
+            @empty
+            @endforelse
+        </select>
     </div>
-</div>
-<div class="form-group">
-    <label for="">cast</label>
-    <select name="form-control" name="cast">
-        <option value="">Pilih cast</option>
-        @forelse ($cast as $key =>)
-        <option value="{{$item["id"]}}">{{$item['nama']}}</option>
-        @empty
-        @endforelse
-    </select>
-</div>
-<div class="form-group">
-    <label for="">film</label>
-    <select name="form-control" name="film">
-        <option value="">Pilih cast</option>
-        @forelse ($film as $key =>)
-        <option value="{{$item["id"]}}">{{$item['nama']}}</option>
-        @empty
-        @endforelse
-    </select>
-</div>
+    
+    <div class="form-group">
+        <label for="">film</label>
+        <select class="form-control" name="film">
+            <option value="">Pilih film</option>
+            @forelse ($film as $item)
+            <option value="{{$item["id"]}}">{{$item['judul']}}</option>
+            @empty
+            @endforelse
+        </select>
+    </div>
+    
 
         <div class="form-group">
             <label >Nama</label>

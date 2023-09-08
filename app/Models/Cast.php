@@ -11,4 +11,5 @@ class Cast extends Model
     protected $table = 'cast';
 
     protected $fillable = ['nama', 'umur', 'bio'];
+    
 }
